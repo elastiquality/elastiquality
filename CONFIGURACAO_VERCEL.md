@@ -57,13 +57,13 @@ G-9PRJM081DJ
 #### **Stripe**
 ```
 STRIPE_SECRET_KEY
-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
+sk_live_YOUR_KEY_HERE
 
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-pk_live_51SGe6QL2gcFNnf7zveGqcvR88OctgOYC0OElvzdtjYss3G9RmwonnMCi8XTYrw8pZ5AMqDVv7zyJ9bAUVy5eUTgK00DVBLPawc
+pk_live_YOUR_KEY_HERE
 
 STRIPE_WEBHOOK_SECRET
-whsec_fECwDkJjrCKc8Ut1WWhcg1jfz7AejOhW
+whsec_YOUR_KEY_HERE
 ```
 
 #### **App Configuration**

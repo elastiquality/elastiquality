@@ -21,8 +21,8 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID="G-9PRJM081DJ"
 # ⚠️ IMPORTANTE: A chave atual é uma Restricted Key rotativa
 # Obtenha a Secret Key regular em: https://dashboard.stripe.com/apikeys
 
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_live_51SGe6QL2gcFNnf7zveGqcvR88OctgOYC0OElvzdtjYss3G9RmwonnMCi8XTYrw8pZ5AMqDVv7zyJ9bAUVy5eUTgK00DVBLPawc"
-STRIPE_SECRET_KEY="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"
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_live_YOUR_KEY_HERE"
+STRIPE_SECRET_KEY="sk_live_YOUR_KEY_HERE"
 STRIPE_WEBHOOK_SECRET="configure-no-stripe-dashboard"
 
 # ⚠️ ATENÇÃO: Obtenha uma Secret Key regular (sk_live_)
