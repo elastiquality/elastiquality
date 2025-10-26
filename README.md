@@ -9,6 +9,7 @@ Este é o website Elastiquality, uma plataforma que conecta clientes com profiss
 - **TypeScript** - Superset do JavaScript com tipagem estática
 - **Tailwind CSS** - Framework CSS para estilização
 - **Firebase** - Plataforma para hospedagem e serviços backend
+- **Stripe** - Processamento de pagamentos
 - **Lucide React** - Biblioteca de ícones
 
 ## 📁 Estrutura do Projeto
@@ -18,22 +19,19 @@ elastiquality3/
 ├── app/                    # Páginas e layouts (App Router)
 │   ├── globals.css        # Estilos globais
 │   ├── layout.tsx         # Layout principal
-│   └── page.tsx           # Página inicial
+│   ├── api/               # API Routes
+│   ├── auth/              # Páginas de autenticação
+│   ├── dashboard/         # Dashboard do usuário
+│   └── services/          # Páginas de serviços
 ├── components/             # Componentes reutilizáveis
-│   ├── Header.tsx         # Cabeçalho do site
-│   ├── Footer.tsx         # Rodapé do site
-│   ├── Hero.tsx           # Seção hero da página inicial
-│   ├── ServiceCategories.tsx # Categorias de serviços
-│   ├── HowItWorks.tsx     # Como funciona
-│   ├── Testimonials.tsx   # Depoimentos
-│   └── CTA.tsx            # Call to action
-├── public/                 # Arquivos estáticos
-│   ├── logo.png           # Logo da empresa
-│   ├── favicon.ico        # Favicon
-│   └── ...                # Outros assets
 ├── lib/                    # Utilitários e configurações
-├── types/                  # Definições de tipos TypeScript
-└── package.json           # Dependências do projeto
+│   ├── firebase.ts        # Configuração do Firebase
+│   ├── stripe.ts         # Configuração do Stripe
+│   ├── auth.tsx          # Context de autenticação
+│   └── ...                # Outros utilitários
+├── public/                 # Arquivos estáticos
+├── functions/              # Cloud Functions do Firebase
+└── types/                  # Definições de tipos TypeScript
 ```
 
 ## 🛠️ Como Executar Localmente
@@ -43,34 +41,72 @@ elastiquality3/
    npm install
    ```
 
-2. **Executar em modo de desenvolvimento:**
+2. **Configurar variáveis de ambiente:**
+   Crie um arquivo `.env.local` na raiz do projeto com as variáveis necessárias (ver `.env.local` para exemplo)
+
+3. **Executar em modo de desenvolvimento:**
    ```bash
    npm run dev
    ```
 
-3. **Abrir no navegador:**
+4. **Abrir no navegador:**
    Acesse [http://localhost:3000](http://localhost:3000)
 
 ## 📱 Funcionalidades Implementadas
 
-### ✅ Página Inicial
-- Header responsivo com navegação
-- Seção Hero com busca de serviços
-- Categorias de serviços organizadas
-- Seção "Como Funciona"
-- Depoimentos de clientes
-- Call to Action
-- Footer completo
+### ✅ Autenticação
+- Login com email e senha
+- Registro de novos usuários
+- Recuperação de senha
+- Proteção de rotas
 
-### ✅ Design Responsivo
-- Layout adaptável para desktop, tablet e mobile
-- Navegação mobile com menu hambúrguer
-- Componentes otimizados para diferentes tamanhos de tela
+### ✅ Dashboard
+- Dashboard para clientes e profissionais
+- Gerenciamento de perfil
+- Histórico de solicitações e propostas
 
-### ✅ Componentes Reutilizáveis
-- Header com autenticação (preparado para implementação)
-- Footer com links e informações de contato
-- Sistema de cores consistente com Tailwind CSS
+### ✅ Solicitação de Serviços
+- Criação de solicitações de orçamento
+- Upload de imagens
+- Categorização por distritos e códigos postais
+
+### ✅ Sistema de Propostas
+- Profissionais podem enviar propostas
+- Clientes podem aceitar propostas
+- Comunicação via chat
+
+### ✅ Chat em Tempo Real
+- Mensagens entre clientes e profissionais
+- Notificações Firebase
+
+### ✅ Pagamentos
+- Integração com Stripe
+- Processamento de pagamentos seguros
+
+## 🌐 Deploy
+
+O projeto está hospedado no **Vercel** e pode ser acessado em:
+- **URL de Produção:** https://elastiquality.pt
+
+### Configuração do Vercel:
+
+As variáveis de ambiente estão configuradas no dashboard do Vercel. Para fazer deploy:
+
+```bash
+npm run build
+vercel --prod
+```
+
+## 📋 Status do Projeto
+
+- ✅ Autenticação com Firebase
+- ✅ Sistema de solicitações
+- ✅ Sistema de propostas
+- ✅ Chat em tempo real
+- ✅ Upload de imagens
+- ✅ Integração com Stripe
+- ✅ Deploy na Vercel
+- ✅ Speed Insights
 
 ## 🔧 Scripts Disponíveis
 
@@ -78,53 +114,6 @@ elastiquality3/
 - `npm run build` - Cria build de produção
 - `npm run start` - Executa o servidor de produção
 - `npm run lint` - Executa o linter
-
-## 🌐 Hospedagem
-
-O projeto está configurado para ser hospedado no **Firebase Hosting**.
-
-### Configuração do Firebase:
-
-1. Instalar Firebase CLI:
-   ```bash
-   npm install -g firebase-tools
-   ```
-
-2. Fazer login no Firebase:
-   ```bash
-   firebase login
-   ```
-
-3. Inicializar projeto Firebase:
-   ```bash
-   firebase init hosting
-   ```
-
-4. Fazer deploy:
-   ```bash
-   npm run build
-   firebase deploy
-   ```
-
-## 📋 Próximos Passos
-
-- [ ] Implementar sistema de autenticação
-- [ ] Criar páginas de busca e filtros
-- [ ] Implementar sistema de perfis de usuários
-- [ ] Adicionar sistema de mensagens
-- [ ] Implementar sistema de avaliações
-- [ ] Criar painel administrativo
-- [ ] Desenvolver aplicativo mobile (React Native)
-
-## 🤝 Contribuição
-
-Este projeto está em desenvolvimento ativo. Para contribuir:
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
 
 ## 📞 Contato
 
